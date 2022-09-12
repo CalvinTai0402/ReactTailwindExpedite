@@ -4,6 +4,7 @@ import Spinner from '../Spinner';
 
 function FormSubmitButton({ loading }) {
   // eslint-disable-next-line no-console
+  console.log('rendering button');
   return (
     <div className="mt-10">
       <button
@@ -17,7 +18,8 @@ function FormSubmitButton({ loading }) {
   );
 }
 
-export default FormSubmitButton;
+// export default FormSubmitButton;
+export default React.memo(FormSubmitButton);
 
 FormSubmitButton.propTypes = {
   // formIsValid: PropTypes.bool.isRequired,

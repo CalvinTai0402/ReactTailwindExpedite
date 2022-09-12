@@ -37,6 +37,8 @@ function FormInputField({
     validate();
   }, [value]);
 
+  // eslint-disable-next-line no-console
+  console.log(`rendering input ${name}`);
   return (
     <div>
       <label htmlFor={htmlFor} className="block mb-2 text-sm text-gray-600">
@@ -68,7 +70,13 @@ function FormInputField({
   );
 }
 
-export default FormInputField;
+// React.memo memoizes functional components. It watches the props (shallowly) and
+// only re-renders the component if the props change. However, it doesn't
+// watch for states in the component. This means that had we used "useState"
+// , "useEffect" or "useContext" in the component, it will still re-render when
+// the state or context change.
+// export default FormInputField;
+export default React.memo(FormInputField);
 
 FormInputField.propTypes = {
   fieldValidity: PropTypes.bool.isRequired,

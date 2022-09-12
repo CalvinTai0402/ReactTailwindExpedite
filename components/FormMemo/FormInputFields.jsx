@@ -37,4 +37,5 @@ function FormInputFields({
   );
 }
 
-export default FormInputFields;
+// export default FormInputFields;
+export default React.memo(FormInputFields);
